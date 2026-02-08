@@ -21,11 +21,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			body {
 				min-height: 100vh;
 			}
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				padding: 20% 0 0 0;
-			}
 			.hero-image {
 				width: 100%;
 			}
@@ -70,7 +65,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
                 main {
                     margin: 0;
-                    padding-top: 20%;
+                    padding-top: 10%;
+					width: calc(100% - 2em);
+					max-width: 100%;
                     flex-grow: 1;
                 }
             }

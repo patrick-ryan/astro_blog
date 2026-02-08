@@ -24,10 +24,6 @@ const posts = (await getCollection('blog')).sort(
 			body {
 				height: 100%;
 			}
-			main {
-				width: 960px;
-				padding: 20% 0 0 0;
-			}
 			ul {
 				display: flex;
 				flex-wrap: wrap;
@@ -104,7 +100,8 @@ const posts = (await getCollection('blog')).sort(
 
                 main {
                     margin: 0;
-                    padding-top: 20%;
+                    padding-top: 10%;
+					width: 960px;
                     flex-grow: 1;
                 }
             }
@@ -115,9 +112,27 @@ const posts = (await getCollection('blog')).sort(
 		<div id="content">
 			<main>
 				<section>
+					<div style="width: 100%">
+						MY LATEST POST
+					</div>
 					<ul>
+						<li>
+							<a href={`/blog/${posts[0].id}/`}>
+								{posts[0].data.heroImage && (
+									<Image width={720} height={360} src={posts[0].data.heroImage} alt="" />
+								)}
+								<h4 class="title">{posts[0].data.title}</h4>
+								<p class="date">
+									<FormattedDate date={posts[0].data.pubDate} />
+								</p>
+							</a>
+						</li>
+						<div style="width: 100%">
+							<hr style="height: 0.5px; border: none; background-color: var(--gray-dark); opacity: 50%">
+							OTHER POSTS
+						</div>
 						{
-							posts.map((post) => (
+							posts.slice(1).map((post) => (
 								<li>
 									<a href={`/blog/${post.id}/`}>
 										{post.data.heroImage && (
