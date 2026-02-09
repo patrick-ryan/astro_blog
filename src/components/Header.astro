@@ -6,7 +6,7 @@ import HeaderLink from './HeaderLink.astro';
 <header>
 	<nav>
 		<div>
-			<h2><a href="/">{SITE_TITLE}</a></h2>
+			<h2><a href="/">{SITE_TITLE}<span id="domain"> · space</span></a></h2>
 		</div>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
@@ -17,6 +17,14 @@ import HeaderLink from './HeaderLink.astro';
 	</nav>
 </header>
 <style>
+	#domain {
+		transform:rotate(-35deg);
+		float: right;
+		margin-left: -20px;
+
+		font-family: "Comic Sans MS", "Comic Sans", cursive;
+		color: rgb(202, 202, 144);
+	}
 	header {
 		margin: 0;
 		padding: 0 1em;
