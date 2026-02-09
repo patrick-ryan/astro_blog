@@ -2,6 +2,10 @@
 pubDate: 2023-12-11
 title: Overengineering
 description: Triggered about overengineering
+tags:
+  - meta
+  - tech
+  - rant
 ---
 I'm tired of hearing this term. This includes phrases like "Putting the cart before the horse", "Keep It Simple Stupid", "You Ain't Gonna Need It", and especially "**Don't let perfect be the enemy of good**". Heaven forbid I need to "timebox" my task so that it doesn't commit "scope creep".
 
