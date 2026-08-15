@@ -1,7 +1,7 @@
 ---
 pubDate: 2026-02-07
 title: The Problem with AI
-description: yes I figured it out
+description: The AI devaluation of human thought and creativity
 ---
 
 The root problem with AI is actually not a new problem - analogously, if someone conveys their thoughts in an authoritative fashion (maybe they tell you they *really* thought about and researched it), the natural tendency when you interact with that person is to believe them. Why question it, and ruin whatever respect they had for you until this point?

@@ -6,7 +6,7 @@ import HeaderLink from './HeaderLink.astro';
 <header>
 	<nav>
 		<div>
-			<h2><a href="/">{SITE_TITLE}<span id="domain"> · space</span></a></h2>
+			<h2><a href="/"><span id="title">{SITE_TITLE}</span><span id="domain"><span> · space</span></span></a></h2>
 		</div>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
@@ -17,13 +17,21 @@ import HeaderLink from './HeaderLink.astro';
 	</nav>
 </header>
 <style>
+	#title {
+		display: inline-block;
+	}
 	#domain {
-		transform:rotate(-35deg);
-		float: right;
-		margin-left: -20px;
+		display: inline-block;
+		margin-left: -6px;
+		margin-bottom: -3px;
 
 		font-family: "Comic Sans MS", "Comic Sans", cursive;
 		color: rgb(202, 202, 144);
+
+		> span {
+			transform:rotate(-35deg);
+			float: right;
+		}
 	}
 	header {
 		margin: 0;
@@ -39,7 +47,7 @@ import HeaderLink from './HeaderLink.astro';
 	h2 {
 		margin: 0;
 		font-size: 1em;
-		width: 140px;
+		width: 160px;
 	}
 
 	h2 a,
@@ -61,6 +69,9 @@ import HeaderLink from './HeaderLink.astro';
 				align-items: center;
 				justify-content: space-between;
 				gap: 40px;
+				@media (max-width: 720px) {
+					gap: 20px;
+				}
 			}
 		}
 	}

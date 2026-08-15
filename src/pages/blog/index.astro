@@ -6,10 +6,25 @@ import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { getBlogParams } from '../../utils/params';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+import _ from 'lodash';
+
+const posts = (await getCollection('blog'));
+const onlyCurrentVersionedPosts = (
+	_.orderBy(
+		_.compact(
+			_.map(
+				_.values(_.groupBy(posts, 'id')),
+				(postVersions) => _.maxBy(postVersions, 'data.pubDate')
+			)
+		),
+		(post) => post.data.pubDate.valueOf(),
+		'desc'
+	)
 );
+
+const { path: firstPath } = getBlogParams(onlyCurrentVersionedPosts[0])
 ---
 
 <!doctype html>
@@ -117,13 +132,13 @@ const posts = (await getCollection('blog')).sort(
 					</div>
 					<ul>
 						<li>
-							<a href={`/blog/${posts[0].id}/`}>
-								{posts[0].data.heroImage && (
-									<Image width={720} height={360} src={posts[0].data.heroImage} alt="" />
+							<a href={`/blog/${firstPath}/`}>
+								{onlyCurrentVersionedPosts[0].data.heroImage && (
+									<Image width={720} height={360} src={onlyCurrentVersionedPosts[0].data.heroImage} alt="" />
 								)}
-								<h4 class="title">{posts[0].data.title}</h4>
+								<h4 class="title">{onlyCurrentVersionedPosts[0].data.title}</h4>
 								<p class="date">
-									<FormattedDate date={posts[0].data.pubDate} />
+									<FormattedDate date={onlyCurrentVersionedPosts[0].data.pubDate} />
 								</p>
 							</a>
 						</li>
@@ -132,19 +147,22 @@ const posts = (await getCollection('blog')).sort(
 							OTHER POSTS
 						</div>
 						{
-							posts.slice(1).map((post) => (
-								<li>
-									<a href={`/blog/${post.id}/`}>
-										{post.data.heroImage && (
-											<Image width={720} height={360} src={post.data.heroImage} alt="" />
-										)}
-										<h4 class="title">{post.data.title}</h4>
-										<p class="date">
-											<FormattedDate date={post.data.pubDate} />
-										</p>
-									</a>
-								</li>
-							))
+							onlyCurrentVersionedPosts.slice(1).map((post) => {
+								const { path } = getBlogParams(post);
+								return (
+									<li>
+										<a href={`/blog/${path}/`}>
+											{post.data.heroImage && (
+												<Image width={720} height={360} src={post.data.heroImage} alt="" />
+											)}
+											<h4 class="title">{post.data.title}</h4>
+											<p class="date">
+												<FormattedDate date={post.data.pubDate} />
+											</p>
+										</a>
+									</li>
+								)
+							})
 						}
 					</ul>
 				</section>
