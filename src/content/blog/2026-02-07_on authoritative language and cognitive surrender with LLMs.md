@@ -1,10 +1,14 @@
 ---
 pubDate: 2026-02-07
-title: The Problem with AI
+title: On Authoritative Language and Cognitive Surrender with LLMs
 description: The AI devaluation of human thought and creativity
+tags:
+  - tech
 ---
 
-The root problem with AI is actually not a new problem - analogously, if someone conveys their thoughts in an authoritative fashion (maybe they tell you they *really* thought about and researched it), the natural tendency when you interact with that person is to believe them. Why question it, and ruin whatever respect they had for you until this point?
+A root problem with AI (in this article, specifically LLMs) is the particular manifestation of natural language it achieves, whereby its discourse appears trustworthy by virtue of establishing an authoritative position in its phrasing and posturing. This is no new problem; analogously, if someone conveys their thoughts in an authoritative fashion (maybe they tell you they *really* thought about and researched some idea), the natural tendency when you interact with that person may be to believe them.
+
+I believe the tendency to believe a claim is modified by the particular relationship between the actors, and in the case where one actor has access to a lot of information and is given the impression of being the authority, the specific relationship optimizes for this tendency. 
 
 # The authoritative claim
 
@@ -22,7 +26,7 @@ AI does not have empirical evidence, it does not understand the boundaries of in
 
 # The problem
 
-At least with humans, the questioner can more readily identify platitudes, misinformation, etc. All they need is a little curiosity to continue the line of questioning, the boundary of the answerer's knowledge will become apparent.
+At least with humans, the questioner can more readily identify platitudes, misinformation, etc. All they need is a little curiosity to continue the line of questioning, the boundary of the responder's knowledge will become apparent.
 
 Still, we humans fall into the trap of argument from authority too often, especially as presented from echo chambers where everything sounds authoritative because it's all agreeable.
 
@@ -32,7 +36,7 @@ And people latch on to that - if AI is the latest technological advancement in s
 
 With some self-affirming answer at anyone's fingertips, answers to questions about the world have turned into a dopamine hit that funds investors in the technology that supplies it. Q&A forums, search engines, and commentaries are taking a hit, because information has become common in availability and in its nature - there's no more discussion to be had.
 
-The accuracy of responses from AI is a problem, and I think it could be improved upon a great deal over time. But that is not the primary problem: the main issue is that *AI is devaluing human thought*.
+The accuracy of responses from AI is a problem, and I think it could be improved upon a great deal over time. But that is not the primary problem: the main issue is that *AI is devaluing human thought*, creating a surrender of cognitive activity.
 
 ## Software engineering
 
